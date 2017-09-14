@@ -33,7 +33,7 @@ do
   perf stat -o perf.txt ./exercise1; 
 
   # parse time value from output file
-  str=$(cat perf.txt | grep "seconds time elapsed" | sed  "s/ *//" | sed "s/ seconds.*//")
+  str=$(cat perf.txt | grep "seconds time elapsed" | sed  "s/ *//" | sed "s/ seconds.*//" | sed "s/,//g")
    
   # append time with trial number to time_results file
   echo -n "$str, " >> normal_time_results.txt
@@ -69,7 +69,7 @@ do
 	  perf stat -o perf.txt ./exercise1; 
 
 	  # parse time value from output file
-	  str=$(cat perf.txt | grep "seconds time elapsed" | sed  "s/ *//" | sed "s/ seconds.*//")
+	  str=$(cat perf.txt | grep "seconds time elapsed" | sed  "s/ *//" | sed "s/ seconds.*//" | sed "s/,//g")
 	   
 	  # append time with trial number to time_results file
 	  echo -n "$str, " >> tile_time_results.txt
@@ -93,7 +93,7 @@ icc exercise1.c -o exercise1 -O3 -D N=$n -D k=100
 for ((i=0; i<epochs; i++))
 do 
   perf stat -e L1-dcache-load-misses -o perf.txt ./exercise1; 
-  str=$(cat perf.txt | grep "L1" | sed "s/ *//" | sed "s/ .*L1.*//")
+  str=$(cat perf.txt | grep "L1" | sed "s/ *//" | sed "s/ .*L1.*//" | sed "s/,//g")
   
   echo -n "$str, " >> normal_l1_results.txt
   echo $i
@@ -116,7 +116,7 @@ do
 	for ((i=0; i<epochs; i++))
 	do 
 	  perf stat -e L1-dcache-load-misses -o perf.txt ./exercise1; 
-	  str=$(cat perf.txt | grep "L1" | sed "s/ *//" | sed "s/ .*L1.*//")
+	  str=$(cat perf.txt | grep "L1" | sed "s/ *//" | sed "s/ .*L1.*//" | sed "s/,//g")
 	  echo -n "$str, " >> tile_l1_results.txt
 	  echo $i
 	done
@@ -135,7 +135,7 @@ icc exercise1.c -o exercise1 -O3 -D N=$n -D k=100
 for ((i=0; i<epochs; i++))
 do 
   perf stat -e LLC-load-misses -o perf.txt ./exercise1; 
-  str=$(cat perf.txt | grep "LLC" | sed "s/ *//" | sed "s/ .*LLC.*//")
+  str=$(cat perf.txt | grep "LLC" | sed "s/ *//" | sed "s/ .*LLC.*//" | sed "s/,//g")
   
   echo -n "$str, " >> normal_llc_results.txt
   echo $i
@@ -158,7 +158,7 @@ do
 	for ((i=0; i<epochs; i++))
 	do 
 	  perf stat -e LLC-load-misses -o perf.txt ./exercise1; 
-	  str=$(cat perf.txt | grep "LLC" | sed "s/ *//" | sed "s/ .*LLC.*//")
+	  str=$(cat perf.txt | grep "LLC" | sed "s/ *//" | sed "s/ .*LLC.*//" | sed "s/,//g")
 	  echo -n "$str, " >> tile_llc_results.txt
 	  echo $i
 	done

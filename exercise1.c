@@ -7,6 +7,8 @@
 //
 // perf stat -e LLC-load-misses -o out.txt ./helloworld; cat out.txt | grep "LLC" | sed "s/ *//" | sed "s/ .*LLC.*//"
 //
+// ... | sed "s/,//g" --> will replace all commas with nothing :)
+//
 
 #ifndef N
 		
