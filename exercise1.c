@@ -33,15 +33,15 @@ struct timeval start,end;
 int main() {
 	
 	#ifdef DEBUG_PRINT
-	printf("DEBUG PRINT: ON\n", N);
+	printf("DEBUG PRINT: ON\n");
 	
 	#ifdef TILE_MODE
-	printf("TILE MODE: ON\n", N);
+	printf("TILE MODE: ON\n");
 	#else
-	printf("TILE MODE: OFF\n", N);
+	printf("TILE MODE: OFF\n");
 	#endif
 	
-	printf("Defaults:\n", N);
+	printf("Defaults:\n");
 	printf("N = %lu\n", N);
 	printf("k = %lu\n\n", k);
 	
