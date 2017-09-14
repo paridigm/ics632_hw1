@@ -72,6 +72,8 @@ do
 
 	done
 
+	echo "" >> tile_time_results.txt
+
 done
 	
 echo ""
@@ -81,6 +83,7 @@ echo ""
 # log everything
 cat normal_time_results.txt
 echo ""
+echo ""
 cat tile_time_results.txt
 echo ""
-
+echo ""
