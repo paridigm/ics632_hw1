@@ -1,14 +1,24 @@
 #!/bin/bash
+#SBATCH -n 1  # Number of tasks
+#SBATCH -c 10 # Number of cores requested
+#SBATCH -N 1  # Number of nodes requested
+#SBATCH -t 300  # Runtime in minutes
+#SBATCH -o on_a_single_node.out # Standard out goes to this file
+#SBATCH -e on_a_single_node.err # Standard err goes to this file
+#SBATCH --mail-type ALL
+#SBATCH --mail-user tknappra@hawaii.edu
+#SBATCH --account=ics_632
+#SBATCH -p ics632.q
 
 echo "running tests..."
 
 # setup vars
 str="time_val"
 n=9500			# array size
-k_start=50		# tile size start
+k_start=1		# tile size start
 k_end=300		# tile size end
-k_inc=100		# tile increment amount
-epochs=3		# tests per tile size
+k_inc=1			# tile increment amount
+epochs=10		# tests per tile size
 
 # clear any possible previous results
 > normal_time_results.txt
