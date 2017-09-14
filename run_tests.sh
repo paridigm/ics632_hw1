@@ -121,6 +121,8 @@ do
 	  echo $i
 	done
 	
+	echo "" >> tile_l1_results.txt
+	
 done
 
 echo ""
@@ -160,6 +162,8 @@ do
 	  echo -n "$str, " >> tile_llc_results.txt
 	  echo $i
 	done
+	
+	echo "" >> tile_llc_results.txt
 	
 done
 
