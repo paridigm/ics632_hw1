@@ -1,0 +1,19 @@
+# started on Thu Sep 14 02:14:14 2017
+
+
+ Performance counter stats for './exercise1':
+
+        443.633170      task-clock (msec)         #    0.996 CPUs utilized          
+                22      context-switches          #    0.050 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+             2,132      page-faults               #    0.005 M/sec                  
+     1,587,897,611      cycles                    #    3.579 GHz                    
+     1,448,183,717      stalled-cycles-frontend   #   91.20% frontend cycles idle   
+   <not supported>      stalled-cycles-backend   
+       299,822,457      instructions              #    0.19  insns per cycle        
+                                                  #    4.83  stalled cycles per insn
+        26,541,970      branches                  #   59.829 M/sec                  
+            39,570      branch-misses             #    0.15% of all branches        
+
+       0.445559220 seconds time elapsed
+
