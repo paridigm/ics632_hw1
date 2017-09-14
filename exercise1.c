@@ -1,11 +1,11 @@
-// 
 //
 // gcc exercise1.c -o exercise1 -D TILE_MODE -D N=10000 -D k=100
 //
 // perf stat -o perf.txt ./helloworld; cat perf.txt | grep "seconds time elapsed" | sed  "s/ *//" | sed "s/ seconds.*//" >> time_results.txt
 //
-// for i in {1..10}; do echo $i; done;
+// perf stat -e L1-dcache-load-misses -o out.txt ./helloworld; cat out.txt | grep "L1" | sed "s/ *//" | sed "s/ .*L1.*//"
 //
+// perf stat -e LLC-load-misses -o out.txt ./helloworld; cat out.txt | grep "LLC" | sed "s/ *//" | sed "s/ .*LLC.*//"
 //
 
 #ifndef N
