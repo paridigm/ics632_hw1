@@ -1,6 +1,6 @@
 // 
 //
-// gcc excercise1.c -o excercise1 -D TILE_MODE -D N=10000 -D k=100
+// gcc exercise1.c -o exercise1 -D TILE_MODE -D N=10000 -D k=100
 //
 // perf stat -o perf.txt ./helloworld; cat perf.txt | grep "seconds time elapsed" | sed  "s/ *//" | sed "s/ seconds.*//" >> time_results.txt
 //
